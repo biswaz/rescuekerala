@@ -49,6 +49,13 @@ class RequestFilter(django_filters.FilterSet):
         # fields = ['district', 'status', 'needwater', 'needfood', 'needcloth', 'needmed', 'needkit_util', 'needtoilet', 'needothers',]
         fields = ['district', 'status']
 
+    def __init__(self, *args, **kwargs):
+        super(RequestFilter, self).__init__(*args, **kwargs)
+        # at startup user doen't push Submit button, and QueryDict (in data) is empty
+        if self.data == {}:
+            self.queryset = self.queryset.none()
+
+
 def request_list(request):
     filter = RequestFilter(request.GET, queryset=Request.objects.all())
     return render(request, 'mainapp/request_list.html', {'filter': filter})
@@ -58,6 +65,12 @@ class VolunteerFilter(django_filters.FilterSet):
     class Meta:
         model = Volunteer
         fields = ['district']
+
+    def __init__(self, *args, **kwargs):
+        super(VolunteerFilter, self).__init__(*args, **kwargs)
+        # at startup user doen't push Submit button, and QueryDict (in data) is empty
+        if self.data == {}:
+            self.queryset = self.queryset.none()
 
 def volunteer_list(request):
     filter = VolunteerFilter(request.GET, queryset=Volunteer.objects.filter(is_spoc=True))
