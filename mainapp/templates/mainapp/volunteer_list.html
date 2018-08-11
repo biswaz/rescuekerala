@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load bootstrap3 %}
+
+{% block content %}
+
+<form action="" method="get">
+       {{ filter.form.as_p }}
+       <input type="submit" />
+ </form>
+   {% for req in filter.qs %}
+       {{ req.name }} - {{ req.phone }}<br />
+   {% endfor %}
+
+{% endblock %}

@@ -38,8 +38,12 @@ class Request(models.Model):
     needtoilet = models.BooleanField(verbose_name='Toileteries')
     needkit_util = models.BooleanField(verbose_name='Kitchen utencil')
     needothers = models.CharField(max_length=500, verbose_name="Other needs", blank=True)
-    status = models.BooleanField(default=False)
-    supply_details = models.CharField(max_length=100)
+    status = models.CharField(
+        max_length = 10,
+        choices = status_types,
+        default = 'new'
+    )
+    supply_details = models.CharField(max_length=100, blank=True)
     dateadded = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -55,3 +59,6 @@ class Volunteer(models.Model):
     organisation = models.CharField(max_length=250)
     address = models.TextField()
     is_spoc = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.name
