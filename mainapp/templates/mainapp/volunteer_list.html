@@ -7,8 +7,16 @@
        {{ filter.form.as_p }}
        <input type="submit" value="Find contact"/>
  </form>
+ <table>
+  <tr>
+    <th>Name</th>
+    <th>Phone</th>
+  </tr>
    {% for req in filter.qs %}
-       {{ req.name }} - {{ req.phone }}<br />
+       <tr>
+         <td>{{ req.name }}</td>
+         <td>{{ req.phone }}</td>
+       </tr>
    {% endfor %}
 
 {% endblock %}
