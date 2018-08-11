@@ -1,20 +1,26 @@
 from django.db import models
 
 districts = (
-('tvm','Thiruvananthapuram'),
-('ptm','Pathanamthitta'),
-('alp','Alappuzha'),
-('ktm','Kottayam'),
-('idk','Idukki'),
-('mpm','Malappuram'),
-('koz','Kozhikode'),
-('wnd','Wayanad'),
-('knr','Kannur'),
-('ksr','Kasaragod'),
-('pkd','Palakkad'),
-('tcr','Thrissur'),
-('ekm','Ernakulam'),
-('kol','Kollam'),
+    ('tvm','Thiruvananthapuram'),
+    ('ptm','Pathanamthitta'),
+    ('alp','Alappuzha'),
+    ('ktm','Kottayam'),
+    ('idk','Idukki'),
+    ('mpm','Malappuram'),
+    ('koz','Kozhikode'),
+    ('wnd','Wayanad'),
+    ('knr','Kannur'),
+    ('ksr','Kasaragod'),
+    ('pkd','Palakkad'),
+    ('tcr','Thrissur'),
+    ('ekm','Ernakulam'),
+    ('kol','Kollam'),
+)
+
+status_types =(
+    ('new', 'New'),
+    ('pro', 'In progess'),
+    ('sup', 'Supplied'),
 )
 
 class Request(models.Model):
@@ -25,10 +31,12 @@ class Request(models.Model):
     location = models.CharField(max_length=500)
     requestee = models.CharField(max_length=100)
     requestee_phone = models.CharField(max_length=10)
-    needwater = models.BooleanField()
-    needfood = models.BooleanField()
-    needcloth = models.BooleanField()
-    needmed = models.BooleanField()
+    needwater = models.BooleanField(verbose_name='Water')
+    needfood = models.BooleanField(verbose_name='Food')
+    needcloth = models.BooleanField(verbose_name='Clothing')
+    needmed = models.BooleanField(verbose_name='Medicine')
+    needtoilet = models.BooleanField(verbose_name='Toileteries')
+    needkit_util = models.BooleanField(verbose_name='Kitchen utencil')
     needothers = models.CharField(max_length=500, verbose_name="Other needs", blank=True)
     status = models.BooleanField(default=False)
     supply_details = models.CharField(max_length=100)
