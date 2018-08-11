@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.views.generic.edit import CreateView
-from .models import Request
+from django.views.generic.base import TemplateView
+from .models import Request, Volunteer
 
 
 class CreateRequest(CreateView):
@@ -8,6 +9,14 @@ class CreateRequest(CreateView):
     template_name='mainapp/request_form.html'
     fields = ['district', 'location', 'requestee', 'requestee_phone', 'needwater', 'needfood', 'needcloth', 'needmed', 'needothers',]
     success_url = '/submitted'
+
+class RegisterVolunteer(CreateView):
+    model = Volunteer
+    fields = ['name', 'phone', 'organisation', 'address',]
+
+class HomePageView(TemplateView):
+    template_name = "home.html"
+
 
 def submittedview(request):
     return HttpResponse('submitted :)')

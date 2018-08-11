@@ -1,0 +1,105 @@
+{% load static %}
+{% load bootstrap3 %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="Description" content="">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <title></title>
+  <!--TODO: Use block head_title-->
+
+  <link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.png' %}"/>
+
+  {% block css %}
+  {% endblock %}
+
+<!--
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/base.css' %}">
+  <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+-->
+
+{% bootstrap_css %}
+
+</head>
+
+<body>
+
+ {% block body %}
+
+<nav class="navbar navbar-default ">
+  <div class="container">
+
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Kerala Rescue</a>
+    </div>
+
+  <div id="navbar" class="collapse navbar-collapse">
+
+    <ul class="nav navbar-nav">
+      <li ><a href="/">Home</a></li>
+      <li ><a href="/request">Request</a></li>
+      <li ><a href="/volunteer">Register</a></li>
+    </ul>
+
+    <!-- <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown" id="account_dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+          Welcome, {{user}}
+          <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <li><a href="/accounts/addbook">Add a book</a></li>
+          <li><a href="/accounts/yourbooks">Your books</a></li>
+          <li><a href="/accounts/logout">Logout</a></li>
+        </ul>
+      </li>
+    </ul> -->
+
+  </div>
+  </div>
+</nav>
+
+
+
+{% block content %}
+{% endblock %}
+
+{% endblock %}
+
+
+<footer class="footer">
+  <div class="container">
+    <a href="https://twitter.com/bis_waz">
+      {# <p class="text-muted">Developed and Designed with <i class="fa fa-heart"></i>  at GEC PKD by Biswas #}
+        {# <i class="fa fa-twitter"></i> #}
+      </p>
+    </a>
+  </div>
+</footer>
+
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+{# <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> #}
+{# <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  #}
+{% bootstrap_javascript %}
+
+{% block javascript %}
+{% endblock %}
+
+
+
+
+</body>
+
+</html>

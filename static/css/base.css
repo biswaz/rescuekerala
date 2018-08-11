@@ -1,0 +1,68 @@
+.navbar{
+	border-radius: 0px;
+}
+
+.navbar-brand{
+	color:orange !important;
+	font-family : 'Montserrat', sans-serif;
+}
+
+.alert{
+		margin-bottom: 0px;
+}
+
+.alert .alert-dismissible{
+	padding: 8px 35px 8px 8px ;
+}
+
+/*Footer*/
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: px;
+  background-color: #2c3e50;
+	text-align: center;
+}
+
+.footer .text-muted{
+	padding-top: 5px;
+}
+
+.well.yourbooks{
+	border-radius:
+}
+
+.login-or{
+	padding: 16px 0 16px 0;
+}
+
+.btn.facebook{
+	border-color: #2d5073;
+	background-color: #3B5998;
+	color:white;
+}
+.btn.google{
+	border-color: #2d5073;
+	background-color: #DD4B39;
+	color:white;
+}
+
+.fa.fa-heart {
+  color: red;
+}
+
+.fa.fa-twitter {
+  color: #8383ff;
+}

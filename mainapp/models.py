@@ -1,26 +1,26 @@
 from django.db import models
 
-class Request(models.Model):
-    districts = (
-    ('tvm','Thiruvananthapuram'),
-    ('ptm','Pathanamthitta'),
-    ('alp','Alappuzha'),
-    ('ktm','Kottayam'),
-    ('idk','Idukki'),
-    ('mpm','Malappuram'),
-    ('koz','Kozhikode'),
-    ('wnd','Wayanad'),
-    ('knr','Kannur'),
-    ('ksr','Kasaragod'),
-    ('pkd','Palakkad'),
-    ('tcr','Thrissur'),
-    ('ekm','Ernakulam'),
-    ('kol','Kollam'),
-    )
+districts = (
+('tvm','Thiruvananthapuram'),
+('ptm','Pathanamthitta'),
+('alp','Alappuzha'),
+('ktm','Kottayam'),
+('idk','Idukki'),
+('mpm','Malappuram'),
+('koz','Kozhikode'),
+('wnd','Wayanad'),
+('knr','Kannur'),
+('ksr','Kasaragod'),
+('pkd','Palakkad'),
+('tcr','Thrissur'),
+('ekm','Ernakulam'),
+('kol','Kollam'),
+)
 
+class Request(models.Model):
     district = models.CharField(
-    max_length = 15,
-    choices = districts,
+        max_length = 15,
+        choices = districts,
     )
     location = models.CharField(max_length=500)
     requestee = models.CharField(max_length=100)
@@ -36,3 +36,14 @@ class Request(models.Model):
 
     def __str__(self):
         return self.district + ' ' + self.location
+
+class Volunteer(models.Model):
+    district = models.CharField(
+        max_length = 15,
+        choices = districts,
+    )
+    name = models.CharField(max_length=100)
+    phone = models.CharField(max_length=10)
+    organisation = models.CharField(max_length=250)
+    address = models.TextField()
+    is_spoc = models.BooleanField(default=False)
