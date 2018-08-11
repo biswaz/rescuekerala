@@ -17,6 +17,11 @@ body{
     float:right;
     color: #333333;
 }
+.contactus{
+    float:right;
+    color: #333333;
+    padding-right: 5px;
+}
 h1.main-logo{
     font-size: 6rem;
     display:block;
