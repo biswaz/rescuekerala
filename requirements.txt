@@ -5,3 +5,4 @@ django-filter==2.0.0
 gunicorn==19.9.0
 psycopg2==2.7.5
 pytz==2018.5
+whitenoise==4.0
