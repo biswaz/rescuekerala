@@ -5,7 +5,7 @@
 
 <form action="" method="get">
        {{ filter.form.as_p }}
-       <input type="submit" />
+       <input type="submit" value="Find contact"/>
  </form>
    {% for req in filter.qs %}
        {{ req.name }} - {{ req.phone }}<br />

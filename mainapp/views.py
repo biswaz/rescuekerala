@@ -27,20 +27,25 @@ class CreateRequest(CreateView):
         'detailtoilet',
         'needothers'
     ]
-    success_url = '/'
+    success_url = '/req_sucess'
 
 class RegisterVolunteer(CreateView):
     model = Volunteer
     fields = ['name', 'district', 'phone', 'organisation', 'address',]
-    success_url = '/'
+    success_url = '/reg_success'
 
 
 class HomePageView(TemplateView):
     template_name = "home.html"
 
 
-def submittedview(request):
-    return HttpResponse('submitted :)')
+class ReqSuccess(TemplateView):
+    template_name = "mainapp/req_success.html"
+
+
+class RegSuccess(TemplateView):
+    template_name = "mainapp/reg_success.html"
+
 
 
 class RequestFilter(django_filters.FilterSet):

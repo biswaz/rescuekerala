@@ -8,5 +8,6 @@ urlpatterns = [
     path('volunteer/', views.RegisterVolunteer.as_view(), name='registerview'),
     path('requests/', views.request_list, name='requestlistview'),
     path('volunteers/', views.volunteer_list, name='volunteerlistview'),
-    path('submitted/', views.submittedview, name='submittedview'),
+    path('reg_success/', views.RegSuccess.as_view(), name='reg_successview'),
+    path('req_sucess/', views.ReqSuccess.as_view(), name='req_sucessview'),
 ]

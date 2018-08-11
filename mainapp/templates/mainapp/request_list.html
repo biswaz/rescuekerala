@@ -5,10 +5,22 @@
 
 <form action="" method="get">
        {{ filter.form.as_p }}
-       <input type="submit" />
+       <input value="View requests" type="submit" />
  </form>
+
+ <table>
+  <tr>
+    <th>District</th>
+    <th>Status</th>
+    <th>Date</th>
+  </tr>
    {% for req in filter.qs %}
-       {{ req.requestee }} - {{ req.location }}<br />
+       <tr>
+         <td>{{ req.district }}</td>
+         <td>{{ req.get_status_display }}</td>
+         <td>{{ req.dateadded }}</td>
+       </tr>
    {% endfor %}
 
+</table>
 {% endblock %}
