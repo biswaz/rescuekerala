@@ -1,0 +1,86 @@
+body{
+    background: #ededed;
+    font-family: 'Raleway';
+}
+.navbar{
+    padding: 15px 30px;
+}
+.brand-logo,.brand-logo:hover{
+    font-size: 24px;
+    color: #333333;
+    border: 2px solid #333333;
+    padding: 6px 10px;
+    font-weight: 500;
+    text-decoration: none
+}
+.backtohome{
+    float:right;
+    color: #333333;
+}
+h1.main-logo{
+    font-size: 6rem;
+    display:block;
+    color:#333333;
+    font-weight: 600;
+}
+a.home-button{
+    display: inline-block;
+    padding: 30px 15px;
+    margin: 5px 10px;
+    border:2px solid #333333;
+    color: #333333;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    text-decoration: none;
+    width: 220px;
+    max-width: 90%;
+}
+a.home-button:hover{
+    background: #333333;
+    color:#FFFFFF;
+}
+    a.home-button .glyphicon{
+        font-size: 6rem;
+        display: block;
+        margin-bottom: 20px;
+    }
+    a.home-button .text{
+        font-size: 2rem;
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+p.home-info{
+    font-size: 2rem;
+    font-weight: 500;
+    max-width: 800px;
+    margin:30px auto 0;
+}
+form{
+    width:90%;
+    margin: 20px auto;
+    max-width: 600px;
+}
+@media screen and (max-width: 640px) {
+    .brand-logo,.brand-logo:hover{
+        font-size: 18px;
+        padding: 4px 8px;
+    }
+    h1.main-logo{
+        font-size: 3.5rem;
+    }
+    a.home-button .glyphicon{
+        font-size: 3rem;
+        margin-bottom: 15px;
+    }
+    a.home-button{
+        display: inline-block;
+        padding: 20px 10px;
+        margin: 5px 10px;
+        width: 180px;
+    }
+    a.home-button .text{
+        font-size: 1.6rem;
+    }
+
+}

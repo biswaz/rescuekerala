@@ -1,7 +1,29 @@
 {% extends 'base.html' %}
 {% block content %}
 
- <a href="/request" class="btn btn-info" role="button">Request for resources</a>
- <a href="/volunteer" class="btn btn-info" role="button">Register as a volunteer</a>
- <a href="/requests" class="btn btn-info" role="button">View requests</a>
+{% load bootstrap3 %}
+
+<div class="container text-center">
+    <h1 class="main-logo">kerala<span style="font-weight: normal;">rescue</span></h1>
+    <p style="font-style:italic;margin-bottom:20px;">
+        For effective collaboration and communications between authorities, volunteers and public
+    </p>
+    <a href="/request" class="home-button" role="button">
+        {% bootstrap_icon "home" %}
+        <span class="text">Request for resources</span>
+    </a>
+    <a href="/requests" class="home-button" role="button">
+        {% bootstrap_icon "list" %}
+        <span class="text">Registered Requests</span>
+    </a>
+    <a href="/volunteer" class="home-button" role="button">
+        {% bootstrap_icon "user" %}
+        <span class="text">Register as a volunteer</span>
+    </a>
+    <p class="home-info">
+        Volunteers are available across Kerala.<br/>
+        Contact the District level point of contracts for any help.<br/>
+        Anyone who is Interested to voluneer can enroll through this website.
+    </p>
+</div>
 {% endblock %}
