@@ -8,7 +8,25 @@ import django_filters
 class CreateRequest(CreateView):
     model = Request
     template_name='mainapp/request_form.html'
-    fields = ['district', 'location', 'requestee', 'requestee_phone', 'needwater', 'needfood', 'needcloth', 'needmed', 'needkit_util', 'needtoilet', 'needothers',]
+    fields = [
+        'district',
+        'location',
+        'requestee',
+        'requestee_phone',
+        'needwater',
+        'detailwater',
+        'needfood',
+        'detailfood',
+        'needcloth',
+        'detailcloth',
+        'needmed',
+        'detailmed',
+        'needkit_util',
+        'detailkit_util',
+        'needtoilet',
+        'detailtoilet',
+        'needothers'
+    ]
     success_url = '/'
 
 class RegisterVolunteer(CreateView):

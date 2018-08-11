@@ -31,12 +31,21 @@ class Request(models.Model):
     location = models.CharField(max_length=500)
     requestee = models.CharField(max_length=100)
     requestee_phone = models.CharField(max_length=10)
+
     needwater = models.BooleanField(verbose_name='Water')
     needfood = models.BooleanField(verbose_name='Food')
     needcloth = models.BooleanField(verbose_name='Clothing')
     needmed = models.BooleanField(verbose_name='Medicine')
     needtoilet = models.BooleanField(verbose_name='Toileteries')
-    needkit_util = models.BooleanField(verbose_name='Kitchen utencil')
+    needkit_util = models.BooleanField(verbose_name='Kitchen utensil')
+
+    detailwater = models.CharField(max_length=250, verbose_name='Details for required water', blank=True)
+    detailfood = models.CharField(max_length=250, verbose_name='Details for required food', blank=True)
+    detailcloth = models.CharField(max_length=250, verbose_name='Details for required clothing', blank=True)
+    detailmed = models.CharField(max_length=250, verbose_name='Details for required medicine', blank=True)
+    detailtoilet = models.CharField(max_length=250, verbose_name='Details for required toileteries', blank=True)
+    detailkit_util = models.CharField(max_length=250, verbose_name='Details for required kitchen utensil', blank=True)
+
     needothers = models.CharField(max_length=500, verbose_name="Other needs", blank=True)
     status = models.CharField(
         max_length = 10,
