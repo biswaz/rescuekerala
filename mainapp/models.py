@@ -23,6 +23,11 @@ status_types =(
     ('sup', 'Supplied'),
 )
 
+contrib_status_types =(
+    ('new', 'New'),
+    ('ful', 'Fullfilled'),
+)
+
 class Request(models.Model):
     district = models.CharField(
         max_length = 15,
@@ -71,3 +76,32 @@ class Volunteer(models.Model):
 
     def __str__(self):
         return self.name
+
+class Contributor(models.Model):
+    district = models.CharField(
+        max_length = 15,
+        choices = districts,
+    )
+    name = models.CharField(max_length=100)
+    phone = models.CharField(max_length=10)
+    address = models.TextField()
+    commodities = models.TextField(verbose_name="What you can contribute. Eg: Shirts, torches etc")
+    status = models.CharField(
+        max_length = 10,
+        choices = contrib_status_types,
+        default = 'new'
+    )
+
+    def __str__(self):
+        return self.name + ' ' + self.get_district_display()
+
+class DistrictNeed(models.Model):
+    district = models.CharField(
+        max_length = 15,
+        choices = districts,
+    )
+    needs = models.TextField()
+    status = models.TextField()
+
+    def __str__(self):
+        return self.get_district_display()

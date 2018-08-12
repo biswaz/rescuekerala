@@ -2,7 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.views.generic.edit import CreateView
 from django.views.generic.base import TemplateView
-from .models import Request, Volunteer
+from .models import Request, Volunteer, Contributor, DistrictNeed
 import django_filters
 
 class CreateRequest(CreateView):
@@ -29,9 +29,16 @@ class CreateRequest(CreateView):
     ]
     success_url = '/req_sucess'
 
+
 class RegisterVolunteer(CreateView):
     model = Volunteer
     fields = ['name', 'district', 'phone', 'organisation', 'address',]
+    success_url = '/reg_success'
+
+
+class RegisterContributor(CreateView):
+    model = Contributor
+    fields = ['name', 'district', 'phone', 'address',  'commodities']
     success_url = '/reg_success'
 
 
@@ -49,6 +56,14 @@ class RegSuccess(TemplateView):
 
 class DistNeeds(TemplateView):
     template_name = "mainapp/district_needs.html"
+
+    def get_context_data(self, **kwargs):
+        # Call the base implementation first to get a context
+        context = super().get_context_data(**kwargs)
+        # Add in a QuerySet of all the books
+        context['district_data'] = DistrictNeed.objects.all()
+        return context
+
 
 
 

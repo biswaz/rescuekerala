@@ -9,42 +9,17 @@
     <th>Details</th>
     <th>Status</th>
   </tr>
-
+{% for item in district_data %}
   <!-- Ernakulam -->
   <tr valign="top">
     <td><strong>Ernakulam</strong></td>
     <td>
-      adfasdsadsadsad s<br/>asdasdasd<br/>adasd
+      {{item.needs|linebreaks}}
     </td>
     <td>
-      0 - Items Recieved<br/>
-      0 - Items Supplied<br/>
+      {{item.status|linebreaks}}
     </td>
   </tr>
-
-  <!-- Ernakulam -->
-  <tr valign="top">
-    <td><strong>Ernakulam</strong></td>
-    <td>
-      adfasdsadsadsad s<br/>asdasdasd<br/>adasd
-    </td>
-    <td>
-      0 - Items Recieved<br/>
-      0 - Items Supplied<br/>
-    </td>
-  </tr>
-
-  <!-- Ernakulam -->
-  <tr valign="top">
-    <td><strong>Ernakulam</strong></td>
-    <td>
-      adfasdsadsadsad s<br/>asdasdasd<br/>adasd
-    </td>
-    <td>
-      0 - Items Recieved<br/>
-      0 - Items Supplied<br/>
-    </td>
-  </tr>
-
+  {% endfor %}
 </table>
 {% endblock %}
