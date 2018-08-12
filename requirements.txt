@@ -1,6 +1,7 @@
 dj-database-url==0.5.0
 Django==2.1
 django-bootstrap3==10.0.1
+django-environ==0.4.5
 django-filter==2.0.0
 gunicorn==19.9.0
 psycopg2==2.7.5
