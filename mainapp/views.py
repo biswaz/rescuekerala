@@ -47,6 +47,10 @@ class RegSuccess(TemplateView):
     template_name = "mainapp/reg_success.html"
 
 
+class DistNeeds(TemplateView):
+    template_name = "mainapp/district_needs.html"
+
+
 
 class RequestFilter(django_filters.FilterSet):
     class Meta:
