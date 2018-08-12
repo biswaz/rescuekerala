@@ -16,7 +16,7 @@
   </tr>
    {% for req in filter.qs %}
        <tr>
-         <td>{{ req.district }}</td>
+         <td>{{ req.get_district_display }}</td>
          <td>{{ req.get_status_display }}</td>
          <td>{{ req.dateadded }}</td>
        </tr>
