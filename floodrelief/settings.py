@@ -74,17 +74,12 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'floodrelief.wsgi.application'
 
-DATABASES = {
-    'default':{
-        'ENGINE':'django.db.backends.sqlite3',
-        'NAME':os.path.join(BASE_DIR,'db.sqlite3')
-    }
-}
+DATABASES = {}
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
-# DATABASES['default'] = dj_database_url.config(
-# 	default='postgres://kruser:password@localhost/krdb')
+DATABASES['default'] = dj_database_url.config(
+	default='postgres://kruser:password@localhost/krdb')
 
 
 # Password validation
