@@ -2,19 +2,49 @@
 {% load bootstrap3 %}
 
 {% block content %}
- <table>
+
+<table>
   <tr>
     <th>District</th>
+    <th>Details</th>
     <th>Status</th>
-    <th>Date</th>
   </tr>
-   {% for req in filter.qs %}
-       <tr>
-         <td>{{ req.get_district_display }}</td>
-         <td>{{ req.get_status_display }}</td>
-         <td>{{ req.dateadded }}</td>
-       </tr>
-   {% endfor %}
+
+  <!-- Ernakulam -->
+  <tr valign="top">
+    <td><strong>Ernakulam</strong></td>
+    <td>
+      adfasdsadsadsad s<br/>asdasdasd<br/>adasd
+    </td>
+    <td>
+      0 - Items Recieved<br/>
+      0 - Items Supplied<br/>
+    </td>
+  </tr>
+
+  <!-- Ernakulam -->
+  <tr valign="top">
+    <td><strong>Ernakulam</strong></td>
+    <td>
+      adfasdsadsadsad s<br/>asdasdasd<br/>adasd
+    </td>
+    <td>
+      0 - Items Recieved<br/>
+      0 - Items Supplied<br/>
+    </td>
+  </tr>
+
+  <!-- Ernakulam -->
+  <tr valign="top">
+    <td><strong>Ernakulam</strong></td>
+    <td>
+      adfasdsadsadsad s<br/>asdasdasd<br/>adasd
+    </td>
+    <td>
+      0 - Items Recieved<br/>
+      0 - Items Supplied<br/>
+    </td>
+  </tr>
 
 </table>
 {% endblock %}

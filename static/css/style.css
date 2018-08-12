@@ -98,17 +98,19 @@ footer{
 }
 
 table {
-    font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 100%;
 }
 
 td, th {
-    border: 1px solid #dddddd;
+    border: 1px solid #cccccc;
     text-align: left;
-    padding: 8px;
+    padding: 14px 8px;
 }
 
 tr:nth-child(even) {
-    background-color: #dddddd;
+    background-color: #E5E5E5;
+}
+tr:hover td{
+    background-color: #dce9f1;
 }
