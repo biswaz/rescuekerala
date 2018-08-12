@@ -12,7 +12,7 @@
 {% for item in district_data %}
   <!-- Ernakulam -->
   <tr valign="top">
-    <td><strong>Ernakulam</strong></td>
+    <td><strong>{{item.get_district_display}}</strong></td>
     <td>
       {{item.needs|linebreaks}}
     </td>
