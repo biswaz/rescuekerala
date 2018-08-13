@@ -12,7 +12,11 @@ body{
     border: 2px solid #333333;
     padding: 6px 10px;
     font-weight: 500;
-    text-decoration: none
+    text-decoration: none;
+    display:inline-block;margin-top:5px;
+}
+.nav-logo{
+    height: 60px;
 }
 .backtohome{
     float:right;
@@ -69,15 +73,20 @@ form{
     max-width: 600px;
 }
 footer{
-    margin: 30px 0;
+    margin: 40px 0;
 }
 .ml.small{
     font-size: 0.6em;
 }
+.footer-logo{
+    height: 60px;
+    margin: 15px;
+}
 @media screen and (max-width: 640px) {
     .brand-logo,.brand-logo:hover{
-        font-size: 18px;
-        padding: 4px 8px;
+        font-size: 15px;
+        padding: 3px 6px;
+        margin-top: 0;
     }
     h1.main-logo{
         font-size: 3.5rem;
@@ -94,6 +103,15 @@ footer{
     }
     a.home-button .text{
         font-size: 2rem;
+    }
+    
+    .nav-logo{
+        height: 30px;
+    }
+    .footer-logo{
+        height: 80px;
+        display: block;
+        margin: 15px auto;
     }
 }
 
