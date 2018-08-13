@@ -12,4 +12,5 @@ urlpatterns = [
     path('req_sucess/', views.ReqSuccess.as_view(), name='req_sucessview'),
     path('district_needs/', views.DistNeeds.as_view(), name='distneedsview'),
     path('reg_contrib/', views.RegisterContributor.as_view(), name='reg_contribview'),
+    path('contrib_success/', views.ContribSuccess.as_view(), name='contribsucessview'),
 ]

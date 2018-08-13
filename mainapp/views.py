@@ -39,7 +39,7 @@ class RegisterVolunteer(CreateView):
 class RegisterContributor(CreateView):
     model = Contributor
     fields = ['name', 'district', 'phone', 'address',  'commodities']
-    success_url = '/reg_success'
+    success_url = '/contrib_success'
 
 
 class HomePageView(TemplateView):
@@ -52,6 +52,10 @@ class ReqSuccess(TemplateView):
 
 class RegSuccess(TemplateView):
     template_name = "mainapp/reg_success.html"
+
+
+class ContribSuccess(TemplateView):
+    template_name = "mainapp/contrib_success.html"
 
 
 class DistNeeds(TemplateView):

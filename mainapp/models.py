@@ -100,8 +100,8 @@ class DistrictNeed(models.Model):
         max_length = 15,
         choices = districts,
     )
-    needs = models.TextField()
-    status = models.TextField()
+    needs = models.TextField(verbose_name="Items required")
+    cnandpts = models.TextField(verbose_name="Contacts and collection points") #contacts and collection points
 
     def __str__(self):
         return self.get_district_display()

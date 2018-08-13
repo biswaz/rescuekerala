@@ -6,8 +6,8 @@
 <table>
   <tr>
     <th>District</th>
-    <th>Details</th>
-    <th>Status</th>
+    <th>Items required</th>
+    <th>Contacts & Collection points</th>
   </tr>
 {% for item in district_data %}
   <!-- Ernakulam -->
@@ -17,7 +17,7 @@
       {{item.needs|linebreaks}}
     </td>
     <td>
-      {{item.status|linebreaks}}
+      {{item.cnandpts|linebreaks}}
     </td>
   </tr>
   {% endfor %}
