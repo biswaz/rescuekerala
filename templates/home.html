@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
 
 {% load bootstrap3 %}
@@ -7,7 +8,8 @@
     <h1 class="main-logo">kerala<span style="font-weight: normal;">rescue</span></h1>
     <p style="font-style:italic;margin-bottom:20px;">
         For effective collaboration and communications between authorities, volunteers and public <br/>
-    </p>
+    <b><a href="{% static 'images/msg_cm.jpg' %}">Message from CM</a></b>
+  </p>
     <a href="/request" class="home-button card" role="button">
         {% bootstrap_icon "grain" %}
         <span class="text">
