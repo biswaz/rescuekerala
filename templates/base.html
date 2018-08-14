@@ -28,9 +28,15 @@
  {% block body %}
 
 <nav class="navbar">
-    <a class="brand-logo" href="/">keralarescue</a>
-    {# <a href="/" class="backtohome">{% bootstrap_icon "home" %} &nbsp; Back To Home</a> #}
-    {# <a href="/volunteers" class="contactus">{% bootstrap_icon "phone" %} &nbsp; Contact Us</a> #}
+    <div class="col-sm-4 col-xs-4">
+      <img src="{% static 'images/kerala-government.png' %}" class="nav-logo" style="float:left">
+    </div>
+    <div class="col-sm-4 col-xs-4 text-center">
+        <a class="brand-logo" href="/">keralarescue</a>
+    </div>
+    <div class="col-sm-4 col-xs-4">
+        <img src="{% static 'images/it-mission.png' %}" class="nav-logo" style="float: right;">
+    </div>
 </nav>
 <div class="container">
 
@@ -44,8 +50,9 @@
 
 <footer class="footer">
   <div class="container text-center">
-    <img src="{% static 'images/ieeelogo.png' %}">
-    <img src="{% static 'images/emblem.png' %}">
+    <img src="{% static 'images/kerala-government.png' %}" class="footer-logo">
+    <img src="{% static 'images/it-mission.png' %}" class="footer-logo">
+    <img src="{% static 'images/ieeelogo.png' %}" class="footer-logo">
   </div>
 </footer>
 
