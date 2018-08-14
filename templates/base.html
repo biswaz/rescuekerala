@@ -32,7 +32,9 @@
       <img src="{% static 'images/kerala-government.png' %}" class="nav-logo" style="float:left">
     </div>
     <div class="col-sm-4 col-xs-4 text-center">
+    {% if not request.path == '/' %}
         <a class="brand-logo" href="/">keralarescue</a>
+    {% endif %}
     </div>
     <div class="col-sm-4 col-xs-4">
         <img src="{% static 'images/it-mission.png' %}" class="nav-logo" style="float: right;">
