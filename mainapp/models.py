@@ -105,3 +105,12 @@ class DistrictNeed(models.Model):
 
     def __str__(self):
         return self.get_district_display()
+
+class DistrictCollection(models.Model):
+    district = models.CharField(
+        max_length=15,
+        choices=districts
+    )
+    collection = models.TextField(
+        verbose_name="Details of collected items"
+    )
