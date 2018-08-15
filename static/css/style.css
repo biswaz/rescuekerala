@@ -32,11 +32,11 @@ h1.main-logo{
     display:block;
     color:#333333;
     font-weight: 600;
+    margin-top:0;
 }
 a.home-button{
-    display: inline-table;
-    padding: 30px 15px;
-    margin: 5px 10px;
+    padding: 15px;
+    margin: 10px;
     border:2px solid #333333;
     color: #333333;
     border-radius: 5px;
@@ -44,20 +44,33 @@ a.home-button{
     -webkit-border-radius: 5px;
     text-decoration: none;
     width: 230px;
-    max-width: 90%;
+    height: 230px;
+    vertical-align: top;
+    display: inline-flex;
+    justify-content: center;
+    flex-direction: column;
 }
 a.home-button:hover{
     background: #333333;
     color:#FFFFFF;
 }
     a.home-button .glyphicon{
-        font-size: 6rem;
+        font-size: 5rem;
         display: block;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
     }
     a.home-button .text{
         font-size: 2rem;
         font-weight: 500;
+        text-transform: uppercase;
+        display:inline-block;
+    }
+    a.home-button .ml{
+        margin-top:7px;
+        padding-top:7px;
+        border-top: 1px dotted #555555;
+        font-size: 1.4rem;
+        font-weight: bold;
         text-transform: uppercase;
         display:inline-block;
     }
@@ -90,6 +103,7 @@ footer{
     }
     h1.main-logo{
         font-size: 3.5rem;
+        margin-top:10px;
     }
     a.home-button .glyphicon{
         font-size: 3rem;
@@ -99,7 +113,8 @@ footer{
         display: inline-block;
         padding: 20px 10px;
         margin: 5px 10px;
-        width: 180px;
+        width: 80%;
+        height: auto;
     }
     a.home-button .text{
         font-size: 2rem;

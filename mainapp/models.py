@@ -32,26 +32,27 @@ class Request(models.Model):
     district = models.CharField(
         max_length = 15,
         choices = districts,
+        verbose_name='Districts - ജില്ല'
     )
-    location = models.CharField(max_length=500)
-    requestee = models.CharField(max_length=100)
-    requestee_phone = models.CharField(max_length=10)
+    location = models.CharField(max_length=500,verbose_name='Location - സ്ഥലം')
+    requestee = models.CharField(max_length=100,verbose_name='Requestee - അപേക്ഷകന്‍റെ പേര്')
+    requestee_phone = models.CharField(max_length=10,verbose_name='Requestee Phone - അപേക്ഷകന്‍റെ ഫോണ്‍ നമ്പര്‍')
 
-    needwater = models.BooleanField(verbose_name='Water')
-    needfood = models.BooleanField(verbose_name='Food')
-    needcloth = models.BooleanField(verbose_name='Clothing')
-    needmed = models.BooleanField(verbose_name='Medicine')
-    needtoilet = models.BooleanField(verbose_name='Toileteries')
-    needkit_util = models.BooleanField(verbose_name='Kitchen utensil')
+    needwater = models.BooleanField(verbose_name='Water - വെള്ളം')
+    needfood = models.BooleanField(verbose_name='Food - ഭക്ഷണം')
+    needcloth = models.BooleanField(verbose_name='Clothing - വസ്ത്രം')
+    needmed = models.BooleanField(verbose_name='Medicine - മരുന്നുകള്‍')
+    needtoilet = models.BooleanField(verbose_name='Toiletries - ശുചീകരണ സാമഗ്രികള്‍ ')
+    needkit_util = models.BooleanField(verbose_name='Kitchen utensil - അടുക്കള സാമഗ്രികള്‍')
 
-    detailwater = models.CharField(max_length=250, verbose_name='Details for required water', blank=True)
-    detailfood = models.CharField(max_length=250, verbose_name='Details for required food', blank=True)
-    detailcloth = models.CharField(max_length=250, verbose_name='Details for required clothing', blank=True)
-    detailmed = models.CharField(max_length=250, verbose_name='Details for required medicine', blank=True)
-    detailtoilet = models.CharField(max_length=250, verbose_name='Details for required toileteries', blank=True)
-    detailkit_util = models.CharField(max_length=250, verbose_name='Details for required kitchen utensil', blank=True)
+    detailwater = models.CharField(max_length=250, verbose_name='Details for required water - ആവശ്യമായ വെള്ളത്തിന്‍റെ വിവരങ്ങള്‍', blank=True)
+    detailfood = models.CharField(max_length=250, verbose_name='Details for required food - ആവശ്യമായ ഭക്ഷണത്തിന്‍റെ വിവരങ്ങള്‍', blank=True)
+    detailcloth = models.CharField(max_length=250, verbose_name='Details for required clothing - ആവശ്യമായ വസ്ത്രത്തിന്‍റെ വിവരങ്ങള്‍', blank=True)
+    detailmed = models.CharField(max_length=250, verbose_name='Details for required medicine - ആവശ്യമായ മരുന്നിന്‍റെ  വിവരങ്ങള്‍', blank=True)
+    detailtoilet = models.CharField(max_length=250, verbose_name='Details for required toiletries - ആവശ്യമായ  ശുചീകരണ സാമഗ്രികള്‍', blank=True)
+    detailkit_util = models.CharField(max_length=250, verbose_name='Details for required kitchen utensil - ആവശ്യമായ അടുക്കള സാമഗ്രികള്‍', blank=True)
 
-    needothers = models.CharField(max_length=500, verbose_name="Other needs", blank=True)
+    needothers = models.CharField(max_length=500, verbose_name="Other needs - മറ്റു ആവശ്യങ്ങള്‍", blank=True)
     status = models.CharField(
         max_length = 10,
         choices = status_types,
@@ -70,7 +71,7 @@ class Volunteer(models.Model):
     )
     name = models.CharField(max_length=100)
     phone = models.CharField(max_length=10)
-    organisation = models.CharField(max_length=250)
+    organisation = models.CharField(max_length=250, verbose_name="Organization (സംഘടന) / College")
     address = models.TextField()
     is_spoc = models.BooleanField(default=False, verbose_name="Is point of contact")
     joined = models.DateTimeField(auto_now_add=True)
@@ -87,7 +88,7 @@ class Contributor(models.Model):
     name = models.CharField(max_length=100)
     phone = models.CharField(max_length=10)
     address = models.TextField()
-    commodities = models.TextField(verbose_name="What you can contribute. Eg: Shirts, torches etc")
+    commodities = models.TextField(verbose_name="What you can contribute. ( സംഭാവന ചെയ്യാന്‍ ഉദ്ദേശിക്കുന്ന സാധനങ്ങള്‍ ) -- Eg: Shirts, torches etc ")
     status = models.CharField(
         max_length = 10,
         choices = contrib_status_types,

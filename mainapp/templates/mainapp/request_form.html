@@ -2,7 +2,6 @@
 {% load bootstrap3 %}
 
 {% block content %}
-
   <form method="post"  class="simple-form">
   {% csrf_token %}
   {% bootstrap_form form %}
@@ -12,5 +11,36 @@
   </button>
   {% endbuttons %}
   </form>
+
+  <script type="text/javascript">
+	try {
+
+  		window.addEventListener('load', checkVisibility, false);
+  		var checkboxes = document.querySelectorAll("input[type=checkbox]");
+		for(var i=0; i< checkboxes.length; i++) {
+			checkboxes[i].addEventListener("change",checkVisibility);
+		}
+ 	 	
+ 	 	function checkVisibility(){
+			var formgroups = document.querySelectorAll(".form-group");
+			Array.prototype.forEach.call(formgroups, function(el, i){
+				var checkbox = el.querySelectorAll(".checkbox");
+				if(checkbox.length > 0){
+					if(el.querySelectorAll("input")[0].checked == true){
+						formgroups[i+1].style.display = "block";						
+					}
+					else{
+						formgroups[i+1].style.display = "none";												
+					}
+				}
+			});  		
+
+		}
+  	}
+	catch(err) {
+		console.log("Your browser does not allow some javascript programs.\nError Message : " + err.message)
+	}
+
+  </script>
 
 {% endblock %}
