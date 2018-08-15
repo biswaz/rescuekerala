@@ -11,12 +11,14 @@
  <table>
   <tr>
     <th>District</th>
+    <th>Location</th>
     <th>Status</th>
     <th>Date</th>
   </tr>
    {% for req in filter.qs %}
        <tr>
          <td>{{ req.get_district_display }}</td>
+         <td>{{ req.location  }}</td>         
          <td>{{ req.get_status_display }}</td>
          <td>{{ req.dateadded }}</td>
        </tr>
