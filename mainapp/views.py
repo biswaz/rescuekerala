@@ -2,7 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.views.generic.edit import CreateView
 from django.views.generic.base import TemplateView
-from .models import Request, Volunteer, Contributor, DistrictNeed
+from .models import Request, Volunteer, DistrictManager, Contributor, DistrictNeed
 import django_filters
 
 class CreateRequest(CreateView):
@@ -89,17 +89,17 @@ def request_list(request):
     return render(request, 'mainapp/request_list.html', {'filter': filter})
 
 
-class VolunteerFilter(django_filters.FilterSet):
+class DistrictManagerFilter(django_filters.FilterSet):
     class Meta:
-        model = Volunteer
+        model = DistrictManager
         fields = ['district']
 
     def __init__(self, *args, **kwargs):
-        super(VolunteerFilter, self).__init__(*args, **kwargs)
+        super(DistrictManagerFilter, self).__init__(*args, **kwargs)
         # at startup user doen't push Submit button, and QueryDict (in data) is empty
         if self.data == {}:
             self.queryset = self.queryset.none()
 
-def volunteer_list(request):
-    filter = VolunteerFilter(request.GET, queryset=Volunteer.objects.filter(is_spoc=True))
-    return render(request, 'mainapp/volunteer_list.html', {'filter': filter})
+def districtmanager_list(request):
+    filter = DistrictManagerFilter(request.GET, queryset=DistrictManager.objects.all())
+    return render(request, 'mainapp/districtmanager_list.html', {'filter': filter})

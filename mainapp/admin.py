@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Request, Volunteer, Contributor, DistrictNeed, DistrictCollection
+from .models import Request, Volunteer, Contributor, DistrictNeed, DistrictCollection, DistrictManager
 
 class RequestAdmin(admin.ModelAdmin):
     readonly_fields = ('dateadded',)
@@ -9,3 +9,4 @@ admin.site.register(Volunteer)
 admin.site.register(Contributor)
 admin.site.register(DistrictNeed)
 admin.site.register(DistrictCollection)
+admin.site.register(DistrictManager)

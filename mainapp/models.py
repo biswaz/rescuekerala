@@ -72,10 +72,11 @@ class Volunteer(models.Model):
     phone = models.CharField(max_length=10)
     organisation = models.CharField(max_length=250)
     address = models.TextField()
-    is_spoc = models.BooleanField(default=False)
+    is_spoc = models.BooleanField(default=False, verbose_name="Is point of contact")
 
     def __str__(self):
         return self.name
+
 
 class Contributor(models.Model):
     district = models.CharField(
@@ -91,6 +92,19 @@ class Contributor(models.Model):
         choices = contrib_status_types,
         default = 'new'
     )
+
+    def __str__(self):
+        return self.name + ' ' + self.get_district_display()
+
+
+class DistrictManager(models.Model):
+    district = models.CharField(
+        max_length = 15,
+        choices = districts,
+    )
+    name = models.CharField(max_length=100)
+    phone = models.CharField(max_length=10)
+    email = models.CharField(max_length=100)
 
     def __str__(self):
         return self.name + ' ' + self.get_district_display()
