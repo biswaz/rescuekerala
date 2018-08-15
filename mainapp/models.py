@@ -73,6 +73,7 @@ class Volunteer(models.Model):
     organisation = models.CharField(max_length=250)
     address = models.TextField()
     is_spoc = models.BooleanField(default=False, verbose_name="Is point of contact")
+    joined = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.name
