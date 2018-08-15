@@ -5,11 +5,13 @@ from .models import Request, Volunteer, Contributor, DistrictNeed, DistrictColle
 class RequestAdmin(admin.ModelAdmin):
     readonly_fields = ('dateadded',)
     ordering = ('district',)
+    list_filter = ('district', 'status',)
 
 
 class VolunteerAdmin(admin.ModelAdmin):
-    list_display = ('name', 'phone', 'organisation',)
-    list_filter = ('district', )
+    readonly_fields = ('joined',)
+    list_display = ('name', 'phone', 'organisation', 'joined')
+    list_filter = ('district', 'joined',)
 
 admin.site.register(Request, RequestAdmin)
 admin.site.register(Volunteer, VolunteerAdmin)

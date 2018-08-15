@@ -61,7 +61,7 @@ class Request(models.Model):
     dateadded = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.district + ' ' + self.location
+        return self.get_district_display() + ' ' + self.location
 
 class Volunteer(models.Model):
     district = models.CharField(
