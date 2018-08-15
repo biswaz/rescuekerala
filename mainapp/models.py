@@ -62,7 +62,7 @@ class Request(models.Model):
     dateadded = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.district + ' ' + self.location
+        return self.get_district_display() + ' ' + self.location
 
 class Volunteer(models.Model):
     district = models.CharField(
@@ -74,6 +74,7 @@ class Volunteer(models.Model):
     organisation = models.CharField(max_length=250, verbose_name="Organization (സംഘടന) / College")
     address = models.TextField()
     is_spoc = models.BooleanField(default=False, verbose_name="Is point of contact")
+    joined = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.name

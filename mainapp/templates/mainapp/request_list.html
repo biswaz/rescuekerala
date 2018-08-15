@@ -12,14 +12,18 @@
   <tr>
     <th>District</th>
     <th>Location</th>
-    <th>Status</th>
+    <th>Requestee</th>
+    <th>Contact number</th>
+    {# <th>Summary of request</th> #}
     <th>Date</th>
   </tr>
    {% for req in filter.qs %}
        <tr>
          <td>{{ req.get_district_display }}</td>
-         <td>{{ req.location  }}</td>         
-         <td>{{ req.get_status_display }}</td>
+         <td>{{ req.location  }}</td>
+         <td>{{ req.requestee }}</td>
+         <td>{{ req.requestee_phone }}</td>
+         {# <td>{{ req.requestee_phone }}</td> #}
          <td>{{ req.dateadded }}</td>
        </tr>
    {% endfor %}
