@@ -11,11 +11,13 @@
   <tr>
     <th>Name</th>
     <th>Phone</th>
+    <th>Email</th>
   </tr>
    {% for req in filter.qs %}
        <tr>
          <td>{{ req.name }}</td>
          <td>{{ req.phone }}</td>
+         <td>{{ req.email }}</td>
        </tr>
    {% endfor %}
  </table>
