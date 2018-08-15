@@ -3,6 +3,7 @@ from .models import Request, Volunteer, Contributor, DistrictNeed, DistrictColle
 
 class RequestAdmin(admin.ModelAdmin):
     readonly_fields = ('dateadded',)
+    ordering = ('district',)
 
 admin.site.register(Request, RequestAdmin)
 admin.site.register(Volunteer)
